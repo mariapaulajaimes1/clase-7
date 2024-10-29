@@ -6,7 +6,7 @@ translator = Translator()
 
 # Estilo general con CSS
 st.markdown(
-    """
+    
     <style>
     .title {
         color: #6C63FF;
