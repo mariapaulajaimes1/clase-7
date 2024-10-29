@@ -46,11 +46,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown('<div class="title">Análisis de Sentimiento</div>', unsafe_allow_html=True)
+st.markdown('<div class="title">🔍 Análisis de Sentimiento</div>', unsafe_allow_html=True)
 
-st.markdown('<div class="subtitle">Por favor escribe en el campo de texto la frase que deseas analizar</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">✍️ Por favor escribe en el campo de texto la frase que deseas analizar</div>', unsafe_allow_html=True)
 with st.sidebar:
-    st.markdown('<div class="subtitle">Polaridad y Subjetividad</div>', unsafe_allow_html=True)
+    st.markdown('<div class="subtitle">📊 Polaridad y Subjetividad</div>', unsafe_allow_html=True)
     st.markdown(
         """
         <div class="sidebar-text">
@@ -65,15 +65,15 @@ with st.sidebar:
         unsafe_allow_html=True
     )
 
-with st.expander('Análisis de Polaridad y Subjetividad en un texto'):
-    text1 = st.text_area('Escribe tu frase aquí:')
+with st.expander('💬 Análisis de Polaridad y Subjetividad en un texto'):
+    text1 = st.text_area('✍️ Escribe tu frase aquí:')
     if text1:
         blob = TextBlob(text1)
         polarity = round(blob.sentiment.polarity, 2)
         subjectivity = round(blob.sentiment.subjectivity, 2)
 
-        st.write('**Polaridad:**', polarity)
-        st.write('**Subjetividad:**', subjectivity)
+        st.write('**📈 Polaridad:**', polarity)
+        st.write('**📊 Subjetividad:**', subjectivity)
 
         if polarity >= 0.5:
             st.markdown('<div class="result-positive">Sentimiento Positivo 😊</div>', unsafe_allow_html=True)
@@ -82,8 +82,8 @@ with st.expander('Análisis de Polaridad y Subjetividad en un texto'):
         else:
             st.markdown('<div class="result-neutral">Sentimiento Neutral 😐</div>', unsafe_allow_html=True)
 
-with st.expander('Corrección en inglés'):
-    text2 = st.text_area('Escribe tu texto en inglés aquí:', key='4')
+with st.expander('🔍 Corrección en inglés'):
+    text2 = st.text_area('✍️ Escribe tu texto en inglés aquí:', key='4')
     if text2:
         blob2 = TextBlob(text2)
-        st.write('**Corrección:**', blob2.correct())
+        st.write('**📝 Corrección:**', blob2.correct())
